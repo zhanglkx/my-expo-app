@@ -4,4 +4,4 @@ export default function ProfileScreen() {
   useEffect(() => {
     console.log('profile');
   }, []);
-}   
+}

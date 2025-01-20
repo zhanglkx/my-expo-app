@@ -15,8 +15,9 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
     <ThemedView>
       <TouchableOpacity
         style={styles.heading}
-        onPress={() => setIsOpen((value) => !value)}
-        activeOpacity={0.8}>
+        onPress={() => setIsOpen(value => !value)}
+        activeOpacity={0.8}
+      >
         <IconSymbol
           name="chevron.right"
           size={18}
@@ -33,13 +34,13 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
 }
 
 const styles = StyleSheet.create({
-  heading: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 6,
-  },
   content: {
-    marginTop: 6,
     marginLeft: 24,
+    marginTop: 6,
+  },
+  heading: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 6,
   },
 });

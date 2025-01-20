@@ -9,7 +9,6 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import { useEffect } from 'react';
 
 export default function TabTwoScreen() {
-
   useEffect(() => {
     console.log('explore');
   }, []);
@@ -24,7 +23,8 @@ export default function TabTwoScreen() {
           name="chevron.left.forwardslash.chevron.right"
           style={styles.headerImage}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
@@ -103,8 +103,8 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
     bottom: -90,
+    color: '#808080',
     left: -35,
     position: 'absolute',
   },
