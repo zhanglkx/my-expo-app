@@ -4,15 +4,15 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 export default function HomeScreen() {
-  useEffect(() => {
-    if (__DEV__) {
-      console.log('开发模式日志测试111');
-      Alert.alert('Component Mounted', 'Testing if useEffect is triggered');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (__DEV__) {
+  //     console.log('开发模式日志测试111');
+  //     Alert.alert('Component Mounted', 'Testing if useEffect is triggered');
+  //   }
+  // }, []);
 
   return (
     <ParallaxScrollView

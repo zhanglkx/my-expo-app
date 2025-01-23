@@ -1,4 +1,12 @@
-import { Image, ScrollView, StyleSheet, View, ViewStyle, TextStyle, ImageStyle } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  View,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+} from 'react-native';
 import { useSafeAreaInsets, EdgeInsets } from 'react-native-safe-area-context';
 import { BlurView } from 'expo-blur';
 
@@ -16,17 +24,20 @@ const stats = [
 const activities = [
   {
     title: 'Photography',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    image:
+      'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
     count: 24,
   },
   {
     title: 'Travel',
-    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    image:
+      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
     count: 18,
   },
   {
     title: 'Food',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    image:
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
     count: 42,
   },
 ];
@@ -66,7 +77,7 @@ export default function ProfileScreen() {
   const isDark = colorScheme === 'dark';
 
   return (
-    <ScrollView 
+    <ScrollView
       style={[styles.container, { paddingTop: insets.top }]}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
@@ -78,12 +89,16 @@ export default function ProfileScreen() {
       <ThemedView style={styles.header}>
         <View style={styles.avatarContainer}>
           <Image
-            source={{ uri: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' }}
+            source={{
+              uri: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+            }}
             style={styles.avatar}
           />
         </View>
         <ThemedView style={styles.headerInfo}>
-          <ThemedText type="title" style={styles.name}>John Doe</ThemedText>
+          <ThemedText type="title" style={styles.name}>
+            John Doe
+          </ThemedText>
           <ThemedText style={styles.bio}>
             Professional photographer & world traveler 📸 ✈️
           </ThemedText>
@@ -104,24 +119,24 @@ export default function ProfileScreen() {
 
       {/* Action Buttons */}
       <ThemedView style={styles.actionButtons}>
-        <ThemedView 
+        <ThemedView
           style={[
-            styles.button, 
-            { 
+            styles.button,
+            {
               backgroundColor: colors.tint,
               shadowColor: colors.tint,
               shadowOffset: { width: 0, height: 4 },
               shadowOpacity: 0.2,
               shadowRadius: 8,
               elevation: 4,
-            }
+            },
           ]}
         >
           <ThemedText style={styles.buttonText}>Edit Profile</ThemedText>
         </ThemedView>
-        <ThemedView 
+        <ThemedView
           style={[
-            styles.button, 
+            styles.button,
             styles.shareButton,
             {
               shadowColor: '#000',
@@ -129,7 +144,7 @@ export default function ProfileScreen() {
               shadowOpacity: 0.15,
               shadowRadius: 8,
               elevation: 4,
-            }
+            },
           ]}
         >
           <ThemedText style={styles.buttonText}>Share Profile</ThemedText>
@@ -141,14 +156,14 @@ export default function ProfileScreen() {
         <ThemedText type="subtitle" style={styles.sectionTitle}>
           Activities
         </ThemedText>
-        <ScrollView 
-          horizontal 
-          showsHorizontalScrollIndicator={false} 
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.activitiesContent}
         >
           {activities.map((activity, index) => (
-            <ThemedView 
-              key={activity.title} 
+            <ThemedView
+              key={activity.title}
               style={[
                 styles.activityCard,
                 {
@@ -157,7 +172,7 @@ export default function ProfileScreen() {
                   shadowOpacity: 0.15,
                   shadowRadius: 8,
                   elevation: 4,
-                }
+                },
               ]}
             >
               <Image source={{ uri: activity.image }} style={styles.activityImage} />
@@ -165,9 +180,7 @@ export default function ProfileScreen() {
                 <ThemedText type="defaultSemiBold" style={styles.activityTitle}>
                   {activity.title}
                 </ThemedText>
-                <ThemedText style={styles.activityCount}>
-                  {activity.count} posts
-                </ThemedText>
+                <ThemedText style={styles.activityCount}>{activity.count} posts</ThemedText>
               </BlurView>
             </ThemedView>
           ))}
@@ -179,21 +192,21 @@ export default function ProfileScreen() {
 
 const styles = StyleSheet.create({
   actionButtons: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
     flexDirection: 'row',
     gap: 16,
-    marginTop: 12,
     marginBottom: 12,
-    paddingLeft:20,
-    paddingRight:20,
-    paddingTop:20,
-    paddingBottom:20,
-    borderRadius:20,
-    backgroundColor:'#fff',
-    boxShadow:'0 4px 8px rgba(0,0,0,0.1)',  
+    marginTop: 12,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 20,
   },
   activitiesContent: {
-    paddingHorizontal: 24,
     paddingBottom: 24,
+    paddingHorizontal: 24,
     paddingTop: 0,
   },
   activitiesSection: {
@@ -203,31 +216,31 @@ const styles = StyleSheet.create({
   activityCard: {
     backgroundColor: 'rgba(0,0,0,0.05)',
     borderRadius: 20,
+    height: 280,
     marginRight: 20,
     overflow: 'hidden',
     width: 220,
-    height: 280,
   },
   activityCount: {
+    color: '#fff',
     fontSize: 14,
     opacity: 0.9,
-    color: '#fff',
   },
   activityImage: {
     height: '100%',
     width: '100%',
   },
   activityOverlay: {
-    position: 'absolute',
+    backgroundColor: 'rgba(0,0,0,0.3)',
     bottom: 0,
     left: 0,
-    right: 0,
     padding: 20,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    position: 'absolute',
+    right: 0,
   },
   activityTitle: {
-    fontSize: 20,
     color: '#fff',
+    fontSize: 20,
     marginBottom: 6,
   },
   avatar: {
@@ -236,17 +249,17 @@ const styles = StyleSheet.create({
     width: 100,
   },
   avatarContainer: {
+    elevation: 4,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.15,
     shadowRadius: 8,
-    elevation: 4,
   },
   bio: {
-    marginTop: 8,
-    opacity: 0.7,
     fontSize: 16,
     lineHeight: 22,
+    marginTop: 8,
+    opacity: 0.7,
   },
   button: {
     alignItems: 'center',
@@ -256,8 +269,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#FFFFFF',
-    fontWeight: '600',
     fontSize: 17,
+    fontWeight: '600',
   },
   container: {
     flex: 1,
@@ -279,11 +292,11 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   sectionTitle: {
-    paddingTop: 30,
-    marginBottom: 20,
     fontSize: 22,
     fontWeight: '700',
+    marginBottom: 20,
     paddingHorizontal: 24,
+    paddingTop: 30,
   },
   shareButton: {
     backgroundColor: '#666',
@@ -297,18 +310,18 @@ const styles = StyleSheet.create({
     marginTop: 8,
     opacity: 0.7,
   },
-  statsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 24,
-    paddingHorizontal: 40,
-    marginTop: 8,
-    backgroundColor:'#fff',
-    boxShadow:'0 4px 8px rgba(0,0,0,0.1)',  
-    borderRadius:20,
-  },
   statValue: {
     fontSize: 22,
     fontWeight: '700',
+  },
+  statsContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 8,
+    paddingHorizontal: 40,
+    paddingVertical: 24,
   },
 });
