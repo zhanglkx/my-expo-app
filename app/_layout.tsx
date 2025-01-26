@@ -32,6 +32,8 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerShadowVisible: false, // 移除边框的全局设置
+          headerTitle: '', // 设置全局默认标题
+          headerShown: false, // 完全隐藏标题栏，不占空间
         }}
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
